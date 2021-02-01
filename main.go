@@ -28,7 +28,11 @@ func main() {
 	flag.Parse()
 
 	var client *elastic.Client
-	if client, err = elastic.NewClient(elastic.SetURL(optURL), elastic.SetSniff(false)); err != nil {
+	if client, err = elastic.NewClient(
+		elastic.SetURL(optURL),
+		elastic.SetSniff(false),
+		elastic.SetHealthcheck(false),
+	); err != nil {
 		return
 	}
 
