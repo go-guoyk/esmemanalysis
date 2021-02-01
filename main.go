@@ -58,7 +58,7 @@ func main() {
 	}
 
 	sort.Slice(items, func(i, j int) bool {
-		return indexStatsTotalMemory(items[j].Stats) > indexStatsTotalMemory(items[i].Stats)
+		return indexStatsTotalMemory(items[j].Stats) < indexStatsTotalMemory(items[i].Stats)
 	})
 
 	if len(items) > 10 {
